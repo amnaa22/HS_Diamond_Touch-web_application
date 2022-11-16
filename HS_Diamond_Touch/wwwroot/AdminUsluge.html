@@ -1,0 +1,982 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <!-- bootstrap Style CSS File -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Custom Style CSS File -->
+    <link rel="stylesheet" type="text/css" href="css/custom-style.css">
+    <link rel="stylesheet" type="text/css" href="css/loaders.css" />
+    <link rel="stylesheet" type="text/css" href="css/osoblje.css" />
+    <!-- Font-Awesome Style CSS File -->
+    <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css">
+    <title>Admin usluge</title>
+
+    <style>
+        #unosUsluge {
+            letter-spacing: 2px;
+            width: 270px;
+            height: 49px;
+            margin-left: 73px;
+            background-color: #383838;
+        }
+        #unosUsluge:hover {
+            background-color: #282828;
+        }
+        #muskarci {
+            color: white;
+            text-align: center;
+            letter-spacing: 15px;
+            margin-top: 55px;
+            margin-left: 107px;
+        }
+        #frizure {
+            color: white;
+            text-align: center;
+            letter-spacing: 15px;
+            margin-top: 55px;
+        }
+        input {
+            border-radius: 5px;
+            border-style: hidden;
+            padding: 5px;
+        }
+        textarea {
+            height: 65px;
+            width: 205px;
+            padding: 5px;
+            border-radius: 5px;
+            border: hidden;
+        }
+    </style>
+</head>
+
+<body style="background-image: linear-gradient(rgba(0, 0, 0, 0.418), rgba(0, 0, 0, 0.733)),url('img/pozadina3.jpg'); background-attachment: fixed; background-repeat: no-repeat;">
+
+
+    <!-- Animacija ucitavanja -->
+    <div class="loader loader-bg">
+        <div class="loader-inner ball-pulse">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <!-- Navigaciona traka -->
+    <nav class="navbar navbar-expand-md fixed-top top-nav">
+        <div class="container-fluid">
+            <img src="img/logo1.png" style="width: auto; height: 45px;">
+            <img src="img/logo2.png" style="width: auto; height: 44px; padding-left: 7px;">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"><img src="img/icons/menu.png"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav m-auto text-sm-center text-md-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Početna <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#about">O nama</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#testimonial">Izjave</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Usluge.html">Usluge</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Osoblje.html">Osoblje</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#contact">Kontakt</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container text-center">
+        <div class="row" style="margin-top: 120px;">
+            <div class="col">
+            </div>
+            <div class="col">
+                <a href="unosUsluge.html"><button id="unosUsluge" type="button" class="btn btn-secondary">Unos nove usluge</button></a>
+            </div>
+            <div class="col">
+            </div>
+        </div>
+    </div>
+
+
+    <!-- USLUGE -->
+
+    <div style="margin-right: 44%;">
+        <h2 id="frizeri">USLUGE</h2>
+    </div>
+
+    <div>
+        <div class="row" style="margin-right: 0px;">
+            <div class="col-8">
+                <div style="background: rgba(247,245,237,0.8); margin-left: 48px; margin-right: 106px; margin-top: 34px; font-size: 16px;">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Br.</th>
+                                <th>Naziv usluge</th>
+                                <th>Trajanje</th>
+                                <th>Kratka kosa</th>
+                                <th>Srednja kosa</th>
+                                <th>Duga kosa</th>
+                                <th>Extra duga kosa</th>
+                                <th>Dodatno</th>
+                            </tr>
+                        </thead>
+                        <tbody id="usluge">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-4">
+                <div style="margin-top: 200px; background: rgba(311,247,243,0.8); width: 466px; padding: 20px 30px 10px; font-size: 17px; border-radius: 25px;">
+                    <h3 style="text-align: -webkit-center;">Ažuriranje usluge</h3>
+                    <br />
+                    <label style="padding-right:124px;">ID usluge </label> <output type="text" id="IDUsluge"></output><br /><br />
+                    <label style="padding-right: 100px; vertical-align: bottom; padding-bottom: 20px;">Naziv usluge </label> <textarea type="text" id="naziv" class="inputPolje"></textarea><br /><br />
+                    <label style="padding-right:83px;">Trajanje usluge </label> <input type="text" id="trajanje" class="inputPolje"><br /><br />
+                    <label style="padding-right:55px;">Kratka kosa - cijena </label> <input type="text" id="kratka" class="inputPolje"><br /><br />
+                    <label style="padding-right:47px;">Srednja kosa - cijena </label> <input type="text" id="srednja" class="inputPolje"><br /><br />
+                    <label style="padding-right:65px;">Duga kosa - cijena </label> <input type="text" id="duga" class="inputPolje"><br /><br />
+                    <label style="padding-right:29px;">Extra duga kosa - cijena </label> <input type="text" id="extra" class="inputPolje"><br /><br />
+                    <button type="button" class="btn btn-secondary" style="width: 100px;" onclick="updatePodakeUsluge()">Spasi</button><br /><br />
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- MUSKE USLUGE -->
+
+    <div style="margin-right: 44%;">
+        <h2 id="muskarci">DODATNE USLUGE ZA MUŠKARCE</h2>
+    </div>
+
+    <div>
+        <div class="row" style="margin-right: 0px;">
+            >
+            <div class="col-8">
+                <div style=" background: rgba(247,245,237,0.8); margin-left: 48px; margin-right: 147px; margin-top: 34px; font-size: 16px;">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Br.</th>
+                                <th>Naziv usluge</th>
+                                <th>Trajanje</th>
+                                <th>Cijena</th>
+                                <th>Dodatno</th>
+                            </tr>
+                        </thead>
+                        <tbody id="muskeUsluge">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-4" style="margin-left: -9px;">
+                <div style="margin-top: 35px; background: rgba(311,247,243,0.8); width: 466px; padding: 20px 30px 2px; font-size: 17px; border-radius: 25px;">
+                    <h3 style="text-align: -webkit-center;">Ažuriranje muške usluge</h3>
+                    <br />
+                    <label style="padding-right:124px;">ID usluge </label> <output type="text" id="IDMuski"></output><br /><br />
+                    <label style="padding-right: 100px; vertical-align: bottom; padding-bottom: 20px;">Naziv usluge </label> <textarea type="text" id="nazivMuski" style="height: 65px; width: 205px; padding: 5px; border-radius: 5px; }"></textarea><br /><br />
+                    <label style="padding-right:83px;">Trajanje usluge </label> <input type="text" id="trajanjeMuski" class="inputPolje"><br /><br />
+                    <label style="padding-right:96px;">Cijena usluge</label> <input type="text" id="cijenaMuski" class="inputPolje"><br /><br />
+                    <button type="button" class="btn btn-secondary" style="width: 100px;" onclick="updatePodakeMuski()">Spasi</button><br /><br />
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- FRIZURE -->
+
+    <div style="margin-right: 44%;">
+        <h2 id="frizure">FRIZURE</h2>
+    </div>
+
+    <div>
+        <div class="row" style="margin-right: 0px;">
+            >
+            <div class="col-8">
+                <div style=" background: rgba(247,245,237,0.8); margin-left: 48px; margin-right: 147px; margin-top: 34px; font-size: 16px;">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Br.</th>
+                                <th>Naziv usluge</th>
+                                <th>Trajanje</th>
+                                <th>Cijena</th>
+                                <th>Dodatno</th>
+                            </tr>
+                        </thead>
+                        <tbody id="frizureUsluge">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-4" style="margin-left: -9px;">
+                <div style="margin-top: 93px; background: rgba(311,247,243,0.8); width: 466px; padding: 20px 30px 10px; font-size: 17px; border-radius: 25px;">
+                    <h3 style="text-align: -webkit-center;">Ažuriranje frizure</h3>
+                    <br />
+                    <label style="padding-right:124px;">ID usluge </label> <output type="text" id="IDFrizure"></output><br /><br />
+                    <label style="padding-right: 100px; vertical-align: bottom; padding-bottom: 20px;">Naziv usluge </label> <textarea type="text" id="nazivFrizure" class="inputPolje"></textarea><br /><br />
+                    <label style="padding-right:83px;">Trajanje usluge </label> <input type="text" id="trajanjeFrizure" class="inputPolje"><br /><br />
+                    <label style="padding-right:96px;">Cijena usluge</label> <input type="text" id="cijenaFrizure" class="inputPolje"><br /><br />
+                    <button type="button" class="btn btn-secondary" style="width: 100px;" onclick="updatePodakeFrizura()">Spasi</button><br /><br />
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- MANIKURA I PEDIKURA -->
+
+    <div style="margin-right: 44%;">
+        <h2 id="frizure">MANIKURA I PEDIKURA</h2>
+    </div>
+
+    <div>
+        <div class="row" style="margin-right: 0px;">
+            >
+            <div class="col-8">
+                <div style="background: rgba(247,245,237,0.8); margin-left: 48px; margin-right: 147px; margin-top: 34px; font-size: 16px;">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Br.</th>
+                                <th>Naziv usluge</th>
+                                <th>Trajanje</th>
+                                <th>Cijena</th>
+                                <th>Dodatno</th>
+                            </tr>
+                        </thead>
+                        <tbody id="nokti">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-4" style="margin-left: -9px;">
+                <div style="margin-top: 93px; background: rgba(311,247,243,0.8); width: 466px; padding: 20px 30px 10px; font-size: 17px; border-radius: 25px;">
+                    <h3 style="text-align: -webkit-center;">Ažuriranje manikure i pedikure</h3>
+                    <br />
+                    <label style="padding-right:124px;">ID usluge </label> <output type="text" id="IDNokti"></output><br /><br />
+                    <label style="padding-right: 100px; vertical-align: bottom; padding-bottom: 20px;">Naziv usluge </label> <textarea type="text" id="nazivNokti" class="inputPolje"></textarea><br /><br />
+                    <label style="padding-right:83px;">Trajanje usluge </label> <input type="text" id="trajanjeNokti" class="inputPolje"><br /><br />
+                    <label style="padding-right:96px;">Cijena usluge</label> <input type="text" id="cijenaNokti" class="inputPolje"><br /><br />
+                    <button type="button" class="btn btn-secondary" style="width: 100px;" onclick="updatePodakeNokti()">Spasi</button><br /><br />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br />
+
+
+    <!-- Javascript Files  -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/core.js"></script>
+
+    <script>
+
+        // PRIKAZ PODATAKA
+
+        var niz;
+        ucitajUsluge = () => {
+            let adresa = "api/Usluge/prikazUsluga";
+            fetch(adresa).then((response) => {
+                if (response.status !== 200) {
+                    console.log("Greska" + response.status);
+                    return;
+                } else {
+                    response.json().then((niz) => {
+                        console.log(niz);
+                        popuniPodatke(niz);
+                    })
+                }
+            }).catch((err) => {
+                console.log(err);
+            })
+        }
+
+        popuniPodatke = (podaci) => {
+            for (let i = 0; i < podaci.length; i++) {
+
+                //dodavanje reda u tabelu
+                let red = document.createElement("tr");
+                red.setAttribute("ID", "usluga" + podaci[i].idUsluge);
+                document.getElementById("usluge").appendChild(red);
+
+                //dodavanje celija
+                let IdUsluge = document.createElement("td");
+                red.appendChild(IdUsluge);
+                IdUsluge.innerHTML = podaci[i].idUsluge;
+
+                let naziv = document.createElement("td");
+                red.appendChild(naziv);
+                naziv.style.fontWeight = "750";
+                naziv.innerHTML = podaci[i].nazivUsluge;
+
+                let vrijeme = document.createElement("td");
+                red.appendChild(vrijeme);
+                vrijeme.innerHTML = podaci[i].trajanjeUsluge;
+
+                let kratka = document.createElement("td");
+                red.appendChild(kratka);
+                kratka.innerHTML = podaci[i].kratkaCijena;
+
+                let srednja = document.createElement("td");
+                red.appendChild(srednja);
+                srednja.innerHTML = podaci[i].srednjaCijena;
+
+                let duga = document.createElement("td");
+                red.appendChild(duga);
+                duga.innerHTML = podaci[i].dugaCijena;
+
+                let extra = document.createElement("td");
+                red.appendChild(extra);
+                extra.innerHTML = podaci[i].extraDugaCijena;
+
+                //dodavanje dugmadi
+                let akcije = document.createElement("td");
+                red.appendChild(akcije);
+
+                let updateButton = document.createElement("button");
+                updateButton.setAttribute("onclick", "azurirajUsluge(" + podaci[i].idUsluge + ")");
+                updateButton.setAttribute("class", "btn btn-secondary");
+                updateButton.style.marginRight = "4px";
+                updateButton.style.marginBottom = "3px";
+                updateButton.style.fontSize = "13px";
+                updateButton.innerHTML = "Ažuriraj";
+                akcije.appendChild(updateButton);
+
+                let deleteButton = document.createElement("button");
+                deleteButton.setAttribute("onclick", "alertWinUsluge(" + podaci[i].idUsluge + ")");
+                deleteButton.setAttribute("class", "btn btn-secondary");
+                deleteButton.style.width = "77px";
+                deleteButton.style.fontSize = "13px";
+                deleteButton.style.marginBottom = "3px";
+                deleteButton.innerHTML = "Obriši";
+                akcije.appendChild(deleteButton);
+            }
+        }
+
+        var nizDva;
+        ucitajMuske = () => {
+            let adresa = "api/Usluge/prikazMuskihUsluga";
+            fetch(adresa).then((response) => {
+                if (response.status !== 200) {
+                    console.log("Greska" + response.status);
+                    return;
+                } else {
+                    response.json().then((nizDva) => {
+                        console.log(nizDva);
+                        popuniPodatkeMuske(nizDva);
+                    })
+                }
+            }).catch((err) => {
+                console.log(err);
+            })
+        }
+
+        popuniPodatkeMuske = (podaci) => {
+            for (let i = 0; i < podaci.length; i++) {
+
+                //dodavanje reda u tabelu
+                let red = document.createElement("tr");
+                red.setAttribute("ID", "muskaUsluga" + podaci[i].idBrada);
+                document.getElementById("muskeUsluge").appendChild(red);
+
+                //dodavanje celija
+                let IdBrada = document.createElement("td");
+                red.appendChild(IdBrada);
+                IdBrada.innerHTML = podaci[i].idBrada;
+
+                let naziv = document.createElement("td");
+                red.appendChild(naziv);
+                naziv.style.fontWeight = "750";
+                naziv.innerHTML = podaci[i].nazivUsluge;
+
+                let vrijeme = document.createElement("td");
+                red.appendChild(vrijeme);
+                vrijeme.innerHTML = podaci[i].trajanjeUsluge;
+
+                let cijena = document.createElement("td");
+                red.appendChild(cijena);
+                cijena.innerHTML = podaci[i].cijena + " KM";
+
+                //dodavanje dugmadi
+                let akcije = document.createElement("td");
+                red.appendChild(akcije);
+
+                let updateButton = document.createElement("button");
+                updateButton.setAttribute("onclick", "azurirajMuske(" + podaci[i].idBrada + ")");
+                updateButton.setAttribute("class", "btn btn-secondary");
+                updateButton.style.marginRight = "4px";
+                updateButton.style.fontSize = "13px";
+                updateButton.innerHTML = "Ažuriraj";
+                akcije.appendChild(updateButton);
+
+                let deleteButton = document.createElement("button");
+                deleteButton.setAttribute("onclick", "alertWinMuske(" + podaci[i].idBrada + ")");
+                deleteButton.setAttribute("class", "btn btn-secondary");
+                deleteButton.style.width = "77px";
+                deleteButton.style.fontSize = "13px";
+                deleteButton.innerHTML = "Obriši";
+                akcije.appendChild(deleteButton);
+            }
+        }
+
+        var nizTri;
+        ucitajFrizure = () => {
+            let adresa = "api/Usluge/prikazFrizura";
+            fetch(adresa).then((response) => {
+                if (response.status !== 200) {
+                    console.log("Greska" + response.status);
+                    return;
+                } else {
+                    response.json().then((nizTri) => {
+                        console.log(nizTri);
+                        popuniPodatkeFrizure(nizTri);
+                    })
+                }
+            }).catch((err) => {
+                console.log(err);
+            })
+        }
+
+        popuniPodatkeFrizure = (podaci) => {
+            for (let i = 0; i < podaci.length; i++) {
+
+                //dodavanje reda u tabelu
+                let red = document.createElement("tr");
+                red.setAttribute("ID", "frizura" + podaci[i].idFrizure);
+                document.getElementById("frizureUsluge").appendChild(red);
+
+                //dodavanje celija
+                let IdFrizure = document.createElement("td");
+                red.appendChild(IdFrizure);
+                IdFrizure.innerHTML = podaci[i].idFrizure;
+
+                let naziv = document.createElement("td");
+                red.appendChild(naziv);
+                naziv.style.fontWeight = "750";
+                naziv.innerHTML = podaci[i].nazivUsluge;
+
+                let vrijeme = document.createElement("td");
+                red.appendChild(vrijeme);
+                vrijeme.innerHTML = podaci[i].trajanjeUsluge;
+
+                let cijena = document.createElement("td");
+                red.appendChild(cijena);
+                cijena.innerHTML = podaci[i].cijena;
+
+                //dodavanje dugmadi
+                let akcije = document.createElement("td");
+                red.appendChild(akcije);
+
+                let updateButton = document.createElement("button");
+                updateButton.setAttribute("onclick", "azurirajFrizure(" + podaci[i].idFrizure + ")");
+                updateButton.setAttribute("class", "btn btn-secondary");
+                updateButton.style.marginRight = "4px";
+                updateButton.style.fontSize = "13px";
+                updateButton.innerHTML = "Ažuriraj";
+                akcije.appendChild(updateButton);
+
+                let deleteButton = document.createElement("button");
+                deleteButton.setAttribute("onclick", "alertWinFrizure(" + podaci[i].idFrizure + ")");
+                deleteButton.setAttribute("class", "btn btn-secondary");
+                deleteButton.style.width = "77px";
+                deleteButton.style.fontSize = "13px";
+                deleteButton.innerHTML = "Obriši";
+                akcije.appendChild(deleteButton);
+            }
+        }
+
+        var nizCetiri;
+        ucitajNokte = () => {
+            let adresa = "api/Usluge/prikazNoktiju";
+            fetch(adresa).then((response) => {
+                if (response.status !== 200) {
+                    console.log("Greska" + response.status);
+                    return;
+                } else {
+                    response.json().then((nizCetiri) => {
+                        console.log(nizCetiri);
+                        popuniPodatkeNokti(nizCetiri);
+                    })
+                }
+            }).catch((err) => {
+                console.log(err);
+            })
+        }
+
+        popuniPodatkeNokti = (podaci) => {
+            for (let i = 0; i < podaci.length; i++) {
+
+                //dodavanje reda u tabelu
+                let red = document.createElement("tr");
+                red.setAttribute("ID", "nokti" + podaci[i].idNokti);
+                document.getElementById("nokti").appendChild(red);
+
+                //dodavanje celija
+                let IdNokti = document.createElement("td");
+                red.appendChild(IdNokti);
+                IdNokti.innerHTML = podaci[i].idNokti;
+
+                let naziv = document.createElement("td");
+                red.appendChild(naziv);
+                naziv.style.fontWeight = "750";
+                naziv.innerHTML = podaci[i].nazivUsluge;
+
+                let vrijeme = document.createElement("td");
+                red.appendChild(vrijeme);
+                vrijeme.innerHTML = podaci[i].trajanjeUsluge;
+
+                let cijena = document.createElement("td");
+                red.appendChild(cijena);
+                cijena.innerHTML = podaci[i].cijena + " KM";
+
+                //dodavanje dugmadi
+                let akcije = document.createElement("td");
+                red.appendChild(akcije);
+
+                let updateButton = document.createElement("button");
+                updateButton.setAttribute("onclick", "azurirajNokte(" + podaci[i].idNokti + ")");
+                updateButton.setAttribute("class", "btn btn-secondary");
+                updateButton.style.marginRight = "4px";
+                updateButton.style.fontSize = "13px";
+                updateButton.innerHTML = "Ažuriraj";
+                akcije.appendChild(updateButton);
+
+                let deleteButton = document.createElement("button");
+                deleteButton.setAttribute("onclick", "alertWinNokte(" + podaci[i].idNokti + ")");
+                deleteButton.setAttribute("class", "btn btn-secondary");
+                deleteButton.style.width = "77px";
+                deleteButton.style.fontSize = "13px";
+                deleteButton.innerHTML = "Obriši";
+                akcije.appendChild(deleteButton);
+            }
+        }
+
+
+        // SMJESTANJE PODATAKA ZA AZURIRANJE
+
+        azurirajUsluge = (id) => {
+            let adresa = "api/Usluge/getUslugaById/" + id;
+            fetch(adresa).then((response) => {
+                if (response.status !== 200) {
+                    console.log("Greska" + response.status);
+                    return;
+                } else {
+                    response.json().then((podatak) => {
+                        console.log(podatak[0]);
+                        document.getElementById("IDUsluge").value = podatak[0].idUsluge;
+                        document.getElementById("naziv").value = podatak[0].nazivUsluge;
+                        document.getElementById("trajanje").value = podatak[0].trajanjeUsluge;
+                        document.getElementById("kratka").value = podatak[0].kratkaCijena;
+                        document.getElementById("srednja").value = podatak[0].srednjaCijena;
+                        document.getElementById("duga").value = podatak[0].dugaCijena;
+                        document.getElementById("extra").value = podatak[0].extraDugaCijena;
+                    })
+                }
+            }).catch((err) => {
+                console.log(err);
+            })
+        }
+
+        azurirajMuske = (id) => {
+            let adresa = "api/Usluge/getMuskaUslugaById/" + id;
+            fetch(adresa).then((response) => {
+                if (response.status !== 200) {
+                    console.log("Greska" + response.status);
+                    return;
+                } else {
+                    response.json().then((podatak) => {
+                        console.log(podatak[0]);
+                        document.getElementById("IDMuski").value = podatak[0].idBrada;
+                        document.getElementById("nazivMuski").value = podatak[0].nazivUsluge;
+                        document.getElementById("trajanjeMuski").value = podatak[0].trajanjeUsluge;
+                        document.getElementById("cijenaMuski").value = podatak[0].cijena;
+                    })
+                }
+            }).catch((err) => {
+                console.log(err);
+            })
+        }
+
+        azurirajFrizure = (id) => {
+            let adresa = "api/Usluge/getFrizuraUslugaById/" + id;
+            fetch(adresa).then((response) => {
+                if (response.status !== 200) {
+                    console.log("Greska" + response.status);
+                    return;
+                } else {
+                    response.json().then((podatak) => {
+                        console.log(podatak[0]);
+                        document.getElementById("IDFrizure").value = podatak[0].idFrizure;
+                        document.getElementById("nazivFrizure").value = podatak[0].nazivUsluge;
+                        document.getElementById("trajanjeFrizure").value = podatak[0].trajanjeUsluge;
+                        document.getElementById("cijenaFrizure").value = podatak[0].cijena;
+                    })
+                }
+            }).catch((err) => {
+                console.log(err);
+            })
+        }
+
+        azurirajNokte = (id) => {
+            let adresa = "api/Usluge/getNoktiUslugaById/" + id;
+            fetch(adresa).then((response) => {
+                if (response.status !== 200) {
+                    console.log("Greska" + response.status);
+                    return;
+                } else {
+                    response.json().then((podatak) => {
+                        console.log(podatak[0]);
+                        document.getElementById("IDNokti").value = podatak[0].idNokti;
+                        document.getElementById("nazivNokti").value = podatak[0].nazivUsluge;
+                        document.getElementById("trajanjeNokti").value = podatak[0].trajanjeUsluge;
+                        document.getElementById("cijenaNokti").value = podatak[0].cijena;
+                    })
+                }
+            }).catch((err) => {
+                console.log(err);
+            })
+        }
+
+        // AZURIRANJE 
+
+        updatePodakeUsluge = () => {
+            let podatak = new Object();
+            podatak.idUsluge = parseInt(document.getElementById("IDUsluge").value);
+            podatak.nazivUsluge = document.getElementById("naziv").value;
+            podatak.trajanjeUsluge = document.getElementById("trajanje").value;
+            podatak.kratkaCijena = document.getElementById("kratka").value;
+            podatak.srednjaCijena = document.getElementById("srednja").value;
+            podatak.dugaCijena = document.getElementById("duga").value;
+            podatak.extraDugaCijena = document.getElementById("extra").value;
+            azurirajPodatakUsluge(podatak);
+        }
+        azurirajPodatakUsluge = (podaci) => {
+            let adresa = 'api/Usluge/azurirajUslugu';
+            var strJson = JSON.stringify(podaci);
+            fetch(adresa, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                    // 'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: strJson
+            })
+                .then(
+                    (response) => {
+                        if (response.status < 200 || response.status > 300) {
+                            console.log('Greska: ' + response.status);
+                            return;
+                        }
+                        response.json().then((data) => {
+                            console.log(data);
+                            document.getElementById("usluge").innerHTML = "";
+                            ucitajUsluge();
+                            document.getElementById("IDUsluge").value = "";
+                            document.getElementById("naziv").value = "";
+                            document.getElementById("trajanje").value = "";
+                            document.getElementById("kratka").value = "";
+                            document.getElementById("srednja").value = "";
+                            document.getElementById("duga").value = "";
+                            document.getElementById("extra").value = "";
+                        });
+                    }
+                )
+                .catch((err) => {
+                    console.log('Fetch Greska :-S', err);
+                });
+        }
+
+        updatePodakeMuski = () => {
+            let podatak = new Object();
+            podatak.idBrada = parseInt(document.getElementById("IDMuski").value);
+            podatak.nazivUsluge = document.getElementById("nazivMuski").value;
+            podatak.trajanjeUsluge = document.getElementById("trajanjeMuski").value;
+            podatak.cijena = parseFloat(document.getElementById("cijenaMuski").value);
+            azurirajPodatakMuski(podatak);
+        }
+        azurirajPodatakMuski = (podaci) => {
+            let adresa = 'api/Usluge/azurirajMuskuUslugu';
+            var strJson = JSON.stringify(podaci);
+            fetch(adresa, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                    // 'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: strJson
+            })
+                .then(
+                    (response) => {
+                        if (response.status < 200 || response.status > 300) {
+                            console.log('Greska: ' + response.status);
+                            return;
+                        }
+                        response.json().then((data) => {
+                            console.log(data);
+                            document.getElementById("muskeUsluge").innerHTML = "";
+                            ucitajMuske();
+                            document.getElementById("IDMuski").value = "";
+                            document.getElementById("nazivMuski").value = "";
+                            document.getElementById("trajanjeMuski").value = "";
+                            document.getElementById("cijenaMuski").value = "";
+                        });
+                    }
+                )
+                .catch((err) => {
+                    console.log('Fetch Greska :-S', err);
+                });
+        }
+
+        updatePodakeFrizura = () => {
+            let podatak = new Object();
+            podatak.idFrizure = parseInt(document.getElementById("IDFrizure").value);
+            podatak.nazivUsluge = document.getElementById("nazivFrizure").value;
+            podatak.trajanjeUsluge = document.getElementById("trajanjeFrizure").value;
+            podatak.cijena = document.getElementById("cijenaFrizure").value;
+            azurirajPodatakFrizure(podatak);
+        }
+        azurirajPodatakFrizure = (podaci) => {
+            let adresa = 'api/Usluge/azurirajFrizure';
+            var strJson = JSON.stringify(podaci);
+            fetch(adresa, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                    // 'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: strJson
+            })
+                .then(
+                    (response) => {
+                        if (response.status < 200 || response.status > 300) {
+                            console.log('Greska: ' + response.status);
+                            return;
+                        }
+                        response.json().then((data) => {
+                            console.log(data);
+                            document.getElementById("frizureUsluge").innerHTML = "";
+                            ucitajFrizure();
+                            document.getElementById("IDFrizure").value = "";
+                            document.getElementById("nazivFrizure").value = "";
+                            document.getElementById("trajanjeFrizure").value = "";
+                            document.getElementById("cijenaFrizure").value = "";
+                        });
+                    }
+                )
+                .catch((err) => {
+                    console.log('Fetch Greska :-S', err);
+                });
+        }
+
+        updatePodakeNokti = () => {
+            let podatak = new Object();
+            podatak.idNokti = parseInt(document.getElementById("IDNokti").value);
+            podatak.nazivUsluge = document.getElementById("nazivNokti").value;
+            podatak.trajanjeUsluge = document.getElementById("trajanjeNokti").value;
+            podatak.cijena = parseFloat(document.getElementById("cijenaNokti").value);
+            azurirajPodatakNokti(podatak);
+        }
+        azurirajPodatakNokti = (podaci) => {
+            let adresa = 'api/Usluge/azurirajNokte';
+            var strJson = JSON.stringify(podaci);
+            fetch(adresa, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                    // 'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: strJson
+            })
+                .then(
+                    (response) => {
+                        if (response.status < 200 || response.status > 300) {
+                            console.log('Greska: ' + response.status);
+                            return;
+                        }
+                        response.json().then((data) => {
+                            console.log(data);
+                            document.getElementById("nokti").innerHTML = "";
+                            ucitajNokte();
+                            document.getElementById("IDNokti").value = "";
+                            document.getElementById("nazivNokti").value = "";
+                            document.getElementById("trajanjeNokti").value = "";
+                            document.getElementById("cijenaNokti").value = "";
+                        });
+                    }
+                )
+                .catch((err) => {
+                    console.log('Fetch Greska :-S', err);
+                });
+        }
+
+        // BRISANJE 
+
+        alertWinUsluge = (id) => {
+            if (confirm("Da li zaista želite obrisati ovu uslugu?")) {
+                obrisiUslugu(id);
+            } else {
+                txt = "Otkazivanje brisanja usluge!";
+                console.log(txt);
+            }
+        }
+        obrisiUslugu = (id) => {
+
+            let adresa = "api/Usluge/brisanjeUsluge/" + id;
+            fetch(adresa,
+                {
+                    method: 'DELETE'
+                })
+                .then(
+                    (response) => {
+                        if (response.status !== 200) {
+                            console.log('Greska: ' + response.status);
+                            return;
+                        }
+                        response.text().then((data) => {
+                            console.log(data);
+                            let element = document.getElementById("usluga" + id);
+                            element.remove();
+                            setTimeout(() => {
+                                element.remove();
+                            }, 1000);
+                        });
+                    }
+                )
+                .catch((err) => {
+                    console.log('Fetch Greska :-S', err);
+                });
+        }
+
+        alertWinMuske = (id) => {
+            if (confirm("Da li zaista želite obrisati dodatnu uslugu za muškarce?")) {
+                obrisiMuskuUslugu(id);
+            } else {
+                txt = "Otkazivanje brisanja usluge!";
+                console.log(txt);
+            }
+        }
+        obrisiMuskuUslugu = (id) => {
+
+            let adresa = "api/Usluge/brisanjeMuskeUsluge/" + id;
+            fetch(adresa,
+                {
+                    method: 'DELETE'
+                })
+                .then(
+                    (response) => {
+                        if (response.status !== 200) {
+                            console.log('Greska: ' + response.status);
+                            return;
+                        }
+                        response.text().then((data) => {
+                            console.log(data);
+                            let element = document.getElementById("muskaUsluga" + id);
+                            element.remove();
+                            setTimeout(() => {
+                                element.remove();
+                            }, 1000);
+                        });
+                    }
+                )
+                .catch((err) => {
+                    console.log('Fetch Greska :-S', err);
+                });
+        }
+
+        alertWinFrizure = (id) => {
+            if (confirm("Da li zaista želite obrisati ovu frizuru?")) {
+                obrisiFrizuru(id);
+            } else {
+                txt = "Otkazivanje brisanja usluge!";
+                console.log(txt);
+            }
+        }
+        obrisiFrizuru = (id) => {
+
+            let adresa = "api/Usluge/brisanjeFrizure/" + id;
+            fetch(adresa,
+                {
+                    method: 'DELETE'
+                })
+                .then(
+                    (response) => {
+                        if (response.status !== 200) {
+                            console.log('Greska: ' + response.status);
+                            return;
+                        }
+                        response.text().then((data) => {
+                            console.log(data);
+                            let element = document.getElementById("frizura" + id);
+                            element.remove();
+                            setTimeout(() => {
+                                element.remove();
+                            }, 1000);
+                        });
+                    }
+                )
+                .catch((err) => {
+                    console.log('Fetch Greska :-S', err);
+                });
+        }
+
+        alertWinNokte = (id) => {
+            if (confirm("Da li zaista želite obrisati ovu uslugu manikira i pedikira?")) {
+                obrisiNokte(id);
+            } else {
+                txt = "Otkazivanje brisanja usluge!";
+                console.log(txt);
+            }
+        }
+        obrisiNokte = (id) => {
+
+            let adresa = "api/Usluge/brisanjeNoktiju/" + id;
+            fetch(adresa,
+                {
+                    method: 'DELETE'
+                })
+                .then(
+                    (response) => {
+                        if (response.status !== 200) {
+                            console.log('Greska: ' + response.status);
+                            return;
+                        }
+                        response.text().then((data) => {
+                            console.log(data);
+                            let element = document.getElementById("nokti" + id);
+                            element.remove();
+                            setTimeout(() => {
+                                element.remove();
+                            }, 1000);
+                        });
+                    }
+                )
+                .catch((err) => {
+                    console.log('Fetch Greska :-S', err);
+                });
+        }
+        inicijalizacija = () => {
+            ucitajUsluge();
+            ucitajMuske();
+            ucitajFrizure();
+            ucitajNokte();
+        }
+        document.addEventListener("load", inicijalizacija());
+
+    </script>
+</body>
+</html>

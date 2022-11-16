@@ -1,0 +1,203 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <!-- bootstrap Style CSS File -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Custom Style CSS File -->
+    <link rel="stylesheet" type="text/css" href="css/custom-style.css">
+    <link rel="stylesheet" type="text/css" href="css/loaders.css" />
+    <link rel="stylesheet" type="text/css" href="css/osoblje.css" />
+    <!-- Font-Awesome Style CSS File -->
+    <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css">
+    <title>Admin rezervacije</title>
+
+    <style>
+        select {
+            height: 42px;
+            border-radius: 10px;
+            padding: 5px;
+            background-color: floralwhite;
+            width: 275px;
+        }
+        input {
+            height: 42px;
+            border-radius: 10px;
+            border: none;
+            background-color: floralwhite;
+            text-align: center;
+        }
+        textarea {
+            border-radius: 10px;
+            background-color: floralwhite;
+            padding: 10px;
+            width: 266px;
+        }
+    </style>
+</head>
+
+<body style="background-image: linear-gradient(rgba(0, 0, 0, 0.418), rgba(0, 0, 0, 0.733)),url('img/1936937.jpg'); background-attachment: fixed; background-repeat: no-repeat;">
+
+
+    <!-- Animacija ucitavanja -->
+    <div class="loader loader-bg">
+        <div class="loader-inner ball-pulse">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <!-- Navigaciona traka -->
+    <nav class="navbar navbar-expand-md fixed-top top-nav">
+        <div class="container-fluid">
+            <img src="img/logo1.png" style="width: auto; height: 45px;">
+            <img src="img/logo2.png" style="width: auto; height: 44px; padding-left: 7px;">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"><img src="img/icons/menu.png"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav m-auto text-sm-center text-md-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Početna <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#about">O nama</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#testimonial">Izjave</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Usluge.html">Usluge</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Osoblje.html">Osoblje</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#contact">Kontakt</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container text-center" style="margin-top: 120px; margin-bottom: 10px;">
+        <div class="row">
+            <div class="col">
+            </div>
+            <div class="col-8" style="padding-left: 140px;">
+                <h2 style="color: #B47F41 !important;">KALENDAR REZERVACIJA I TERMINA</h2>
+            </div>
+            <div class="col">
+            </div>
+        </div>
+    </div>
+    <iframe src="https://calendar.google.com/calendar/embed?height=602&wkst=2&bgcolor=%23B39DDB&ctz=Europe%2FBelgrade&showTz=0&title=HS%20Diamond%20Touch&hl=hr&src=YW1uYXBhcHVjaWNAZ21haWwuY29t&src=cGNuYTZpM2k2Yzgza3AzYml0YmVucjRwMzhAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=YWRkcmVzc2Jvb2sjY29udGFjdHNAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&color=%23039BE5&color=%23AD1457&color=%2333B679" style="border: solid 1px #777; margin-left: 500px;" width="1017" height="602" frameborder="0" scrolling="no"></iframe>
+    
+    <div class="container text-center" style="margin-top: 40px; margin-bottom: 10px;">
+        <div class="row">
+            <div class="col">
+            </div>
+            <div class="col-8" style="padding-left: 140px;">
+                <h2 style="color: #B47F41 !important;">PREGLED PITANJA/PREPORUKA/IZJAVA</h2>
+            </div>
+            <div class="col">
+            </div>
+        </div>
+    </div>
+
+    <div style=" background: rgba(247,245,237,0.8); margin: 34px 387px 15px; font-size: 16px; margin-left: 500px;">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Br.</th>
+                    <th>Ime i prezime</th>
+                    <th>Broj telefona</th>
+                    <th style="text-align: -webkit-center;">Email</th>
+                    <th>Ocjena</th>
+                    <th style="text-align: -webkit-center;">Poruka</thstyle="text-align:>
+                </tr>
+            </thead>
+            <tbody id="kontakt">
+            </tbody>
+        </table>
+    </div>
+
+    <div class="container text-center" style="margin-top: 40px; margin-bottom: 10px;">
+        <div class="row">
+            <div class="col">
+            </div>
+            <div class="col-8" style="padding-left: 140px;">
+            </div>
+            <div class="col">
+            </div>
+        </div>
+    </div>
+    
+    <!-- Javascript Files  -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/core.js"></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+
+    <script>
+
+        var niz;
+        ucitajKontaktPitanja = () => {
+            let adresa = "api/Kontakt/prikazKontaktPitanja";
+            fetch(adresa).then((response) => {
+                if (response.status !== 200) {
+                    console.log("Greska" + response.status);
+                    return;
+                } else {
+                    response.json().then((niz) => {
+                        console.log(niz);
+                        popuniPodatke(niz);
+                    })
+                }
+            }).catch((err) => {
+                console.log(err);
+            })
+        }
+
+        popuniPodatke = (podaci) => {
+            for (let i = 0; i < podaci.length; i++) {
+
+                //dodavanje reda u tabelu
+                let red = document.createElement("tr");
+                red.setAttribute("ID", "red" + podaci[i].redniBroj);
+                document.getElementById("kontakt").appendChild(red);
+
+                //dodavanje celija
+                let redniBroj = document.createElement("td");
+                red.appendChild(redniBroj);
+                redniBroj.innerHTML = podaci[i].redniBroj;
+
+                let imePrezime = document.createElement("td");
+                red.appendChild(imePrezime);
+                imePrezime.style.fontWeight = "750";
+                imePrezime.innerHTML = podaci[i].imePrezime;
+
+                let telefon = document.createElement("td");
+                red.appendChild(telefon);
+                telefon.innerHTML = podaci[i].brTelefona;
+
+                let Email = document.createElement("td");
+                red.appendChild(Email);
+                Email.innerHTML = podaci[i].email;
+
+                let Ocjena = document.createElement("td");
+                red.appendChild(Ocjena);
+                Ocjena.innerHTML = podaci[i].ocjena;
+
+                let Poruka = document.createElement("td");
+                red.appendChild(Poruka);
+                Poruka.innerHTML = podaci[i].poruka;
+            }
+        }
+
+        document.addEventListener("load", ucitajKontaktPitanja());
+    </script>
+</body>
+</html>

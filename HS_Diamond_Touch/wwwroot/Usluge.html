@@ -1,0 +1,385 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <!-- bootstrap Style CSS File -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">   
+    <!-- Custom Style CSS File -->
+    <link rel="stylesheet" type="text/css" href="css/custom-style.css">
+    <link rel="stylesheet" type="text/css" href="css/loaders.css" />
+    <link rel="stylesheet" type="text/css" href="css/osoblje.css" />
+    <!-- Font-Awesome Style CSS File -->
+    <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css">
+    <title>Usluge</title>
+
+    <style>
+        #unosUsluge {
+            letter-spacing: 2px;
+            width: 270px;
+            height: 49px;
+            margin-left: 73px;
+        }
+        #muskarci {
+            color: white;
+            text-align: center;
+            letter-spacing: 15px;
+            margin-top: 55px;
+        }
+        #frizure {
+            color: white;
+            text-align: center;
+            letter-spacing: 15px;
+            margin-top: 55px;
+        }
+    </style>
+</head>
+
+<body style="background-image: linear-gradient(rgba(0, 0, 0, 0.418), rgba(0, 0, 0, 0.733)),url('img/usluga3.jpg'); background-attachment: fixed; background-repeat: no-repeat;">
+
+
+    <!-- Animacija ucitavanja -->
+    <div class="loader loader-bg">
+        <div class="loader-inner ball-pulse">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <!-- Navigaciona traka -->
+    <nav class="navbar navbar-expand-md fixed-top top-nav">
+        <div class="container-fluid">
+            <img src="img/logo1.png" style="width: auto; height: 45px;">
+            <img src="img/logo2.png" style="width: auto; height: 44px; padding-left: 7px;">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"><img src="img/icons/menu.png"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav m-auto text-sm-center text-md-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Početna <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#about">O nama</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#testimonial">Izjave</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Usluge.html">Usluge</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Osoblje.html">Osoblje</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#contact">Kontakt</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" id="termin" href="zakazivanjeTermina.html">Zakaži termin</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container text-center">
+        <div class="row" style="margin-top: 120px;">
+            <div class="col">
+            </div>
+            <div class="col">
+                <a href="AdminUsluge.html"><button id="unosUsluge" type="button" class="btn btn-secondary">Adminov prikaz</button></a>
+            </div>
+            <div class="col">
+            </div>
+        </div>
+    </div>
+    <div>
+        <h2 id="frizeri">USLUGE</h2>
+    </div>
+
+    <div style=" background: rgba(247,245,237,0.8); margin: 34px 403px 15px; font-size: 16px;">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Br.</th>
+                    <th>Naziv usluge</th>
+                    <th>Trajanje</th>
+                    <th>Kratka kosa</th>
+                    <th>Srednja kosa</th>
+                    <th>Duga kosa</th>
+                    <th>Extra duga kosa</th>
+                </tr>
+            </thead>
+            <tbody id="usluge">
+            </tbody>
+        </table>
+    </div>
+
+    <div>
+        <h2 id="muskarci">DODATNE USLUGE ZA MUŠKARCE</h2>
+    </div>
+
+    <div style=" background: rgba(247,245,237,0.8); margin: 34px 555px 15px; font-size: 16px;">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Br.</th>
+                    <th>Naziv usluge</th>
+                    <th>Trajanje</th>
+                    <th>Cijena</th>
+                </tr>
+            </thead>
+            <tbody id="muskeUsluge">
+            </tbody>
+        </table>
+    </div>
+
+    <div>
+        <h2 id="frizure">FRIZURE</h2>
+    </div>
+
+    <div style=" background: rgba(247,245,237,0.8); margin: 34px 555px 15px; font-size: 16px;">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Br.</th>
+                    <th>Naziv usluge</th>
+                    <th>Trajanje</th>
+                    <th>Cijena</th>
+                </tr>
+            </thead>
+            <tbody id="frizureUsluge">
+            </tbody>
+        </table>
+    </div>
+
+    <div>
+        <h2 id="frizure">MANIKURA I PEDIKURA</h2>
+    </div>
+
+    <div style=" background: rgba(247,245,237,0.8); margin: 34px 555px 15px; font-size: 16px;">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Br.</th>
+                    <th>Naziv usluge</th>
+                    <th>Trajanje</th>
+                    <th>Cijena</th>
+                </tr>
+            </thead>
+            <tbody id="nokti">
+            </tbody>
+        </table>
+    </div>
+    <br />
+    
+
+    <!-- Javascript Files  -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/core.js"></script>
+
+    <script>
+
+        var niz;
+        ucitajUsluge = () => {
+            let adresa = "api/Usluge/prikazUsluga";
+            fetch(adresa).then((response) => {
+                if (response.status !== 200) {
+                    console.log("Greska" + response.status);
+                    return;
+                } else {
+                    response.json().then((niz) => {
+                        console.log(niz);
+                        popuniPodatke(niz);
+                    })
+                }
+            }).catch((err) => {
+                console.log(err);
+            })
+        }
+
+        popuniPodatke = (podaci) => {
+            for (let i = 0; i < podaci.length; i++) {
+
+                //dodavanje reda u tabelu
+                let red = document.createElement("tr");
+                red.setAttribute("ID", "red" + podaci[i].idUsluge);
+                document.getElementById("usluge").appendChild(red);
+
+                //dodavanje celija
+                let IdUsluge = document.createElement("td");
+                red.appendChild(IdUsluge);
+                IdUsluge.innerHTML = podaci[i].idUsluge;
+
+                let naziv = document.createElement("td");
+                red.appendChild(naziv);
+                naziv.style.fontWeight = "750";
+                naziv.innerHTML = podaci[i].nazivUsluge;
+
+                let vrijeme = document.createElement("td");
+                red.appendChild(vrijeme);
+                vrijeme.innerHTML = podaci[i].trajanjeUsluge;
+
+                let kratka = document.createElement("td");
+                red.appendChild(kratka);
+                kratka.innerHTML = podaci[i].kratkaCijena;
+
+                let srednja = document.createElement("td");
+                red.appendChild(srednja);
+                srednja.innerHTML = podaci[i].srednjaCijena;
+
+                let duga = document.createElement("td");
+                red.appendChild(duga);
+                duga.innerHTML = podaci[i].dugaCijena;
+
+                let extra = document.createElement("td");
+                red.appendChild(extra);
+                extra.innerHTML = podaci[i].extraDugaCijena;
+            }
+        }
+
+        var nizDva;
+        ucitajMuske = () => {
+            let adresa = "api/Usluge/prikazMuskihUsluga";
+            fetch(adresa).then((response) => {
+                if (response.status !== 200) {
+                    console.log("Greska" + response.status);
+                    return;
+                } else {
+                    response.json().then((nizDva) => {
+                        console.log(nizDva);
+                        popuniPodatkeMuske(nizDva);
+                    })
+                }
+            }).catch((err) => {
+                console.log(err);
+            })
+        }
+
+        popuniPodatkeMuske = (podaci) => {
+            for (let i = 0; i < podaci.length; i++) {
+
+                //dodavanje reda u tabelu
+                let red = document.createElement("tr");
+                red.setAttribute("ID", "red" + podaci[i].idBrada);
+                document.getElementById("muskeUsluge").appendChild(red);
+
+                //dodavanje celija
+                let IdBrada = document.createElement("td");
+                red.appendChild(IdBrada);
+                IdBrada.innerHTML = podaci[i].idBrada;
+
+                let naziv = document.createElement("td");
+                red.appendChild(naziv);
+                naziv.style.fontWeight = "750";
+                naziv.innerHTML = podaci[i].nazivUsluge;
+
+                let vrijeme = document.createElement("td");
+                red.appendChild(vrijeme);
+                vrijeme.innerHTML = podaci[i].trajanjeUsluge;
+
+                let cijena = document.createElement("td");
+                red.appendChild(cijena);
+                cijena.innerHTML = podaci[i].cijena + " KM";
+            }
+        }
+
+        var nizTri;
+        ucitajFrizure = () => {
+            let adresa = "api/Usluge/prikazFrizura";
+            fetch(adresa).then((response) => {
+                if (response.status !== 200) {
+                    console.log("Greska" + response.status);
+                    return;
+                } else {
+                    response.json().then((nizTri) => {
+                        console.log(nizTri);
+                        popuniPodatkeFrizure(nizTri);
+                    })
+                }
+            }).catch((err) => {
+                console.log(err);
+            })
+        }
+
+        popuniPodatkeFrizure = (podaci) => {
+            for (let i = 0; i < podaci.length; i++) {
+
+                //dodavanje reda u tabelu
+                let red = document.createElement("tr");
+                red.setAttribute("ID", "red" + podaci[i].idFrizure);
+                document.getElementById("frizureUsluge").appendChild(red);
+
+                //dodavanje celija
+                let IdFrizure = document.createElement("td");
+                red.appendChild(IdFrizure);
+                IdFrizure.innerHTML = podaci[i].idFrizure;
+
+                let naziv = document.createElement("td");
+                red.appendChild(naziv);
+                naziv.style.fontWeight = "750";
+                naziv.innerHTML = podaci[i].nazivUsluge;
+
+                let vrijeme = document.createElement("td");
+                red.appendChild(vrijeme);
+                vrijeme.innerHTML = podaci[i].trajanjeUsluge;
+
+                let cijena = document.createElement("td");
+                red.appendChild(cijena);
+                cijena.innerHTML = podaci[i].cijena;
+            }
+        }
+
+        var nizCetiri;
+        ucitajNokte = () => {
+            let adresa = "api/Usluge/prikazNoktiju";
+            fetch(adresa).then((response) => {
+                if (response.status !== 200) {
+                    console.log("Greska" + response.status);
+                    return;
+                } else {
+                    response.json().then((nizCetiri) => {
+                        console.log(nizCetiri);
+                        popuniPodatkeNokti(nizCetiri);
+                    })
+                }
+            }).catch((err) => {
+                console.log(err);
+            })
+        }
+
+        popuniPodatkeNokti = (podaci) => {
+            for (let i = 0; i < podaci.length; i++) {
+
+                //dodavanje reda u tabelu
+                let red = document.createElement("tr");
+                red.setAttribute("ID", "red" + podaci[i].idNokti);
+                document.getElementById("nokti").appendChild(red);
+
+                //dodavanje celija
+                let IdNokti = document.createElement("td");
+                red.appendChild(IdNokti);
+                IdNokti.innerHTML = podaci[i].idNokti;
+
+                let naziv = document.createElement("td");
+                red.appendChild(naziv);
+                naziv.style.fontWeight = "750";
+                naziv.innerHTML = podaci[i].nazivUsluge;
+
+                let vrijeme = document.createElement("td");
+                red.appendChild(vrijeme);
+                vrijeme.innerHTML = podaci[i].trajanjeUsluge;
+
+                let cijena = document.createElement("td");
+                red.appendChild(cijena);
+                cijena.innerHTML = podaci[i].cijena + " KM";
+            }
+        }
+        document.addEventListener("load", ucitajUsluge());
+        document.addEventListener("load", ucitajMuske());
+        document.addEventListener("load", ucitajFrizure());
+        document.addEventListener("load", ucitajNokte());
+
+    </script>
+</body>
+</html>

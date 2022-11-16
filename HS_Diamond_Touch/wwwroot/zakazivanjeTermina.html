@@ -1,0 +1,327 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <!-- bootstrap Style CSS File -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Custom Style CSS File -->
+    <link rel="stylesheet" type="text/css" href="css/custom-style.css">
+    <link rel="stylesheet" type="text/css" href="css/loaders.css" />
+    <link rel="stylesheet" type="text/css" href="css/osoblje.css" />
+    <!-- Font-Awesome Style CSS File -->
+    <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css">
+    <title>Zakazivanje termina</title>
+
+    <style>
+        select {
+            height: 42px;
+            border-radius: 10px;
+            padding: 5px;
+            background-color: floralwhite;
+            width: 275px;
+        }
+        input {
+            height: 42px;
+            border-radius: 10px;
+            border: none;
+            background-color: floralwhite;
+            text-align: center;
+        }
+        textarea {
+            border-radius: 10px;
+            background-color: floralwhite;
+            padding: 10px;
+            width: 266px;
+        }
+    </style>
+</head>
+
+<body style="background-image: linear-gradient(rgba(0, 0, 0, 0.418), rgba(0, 0, 0, 0.733)),url('img/3717113.jpg'); background-attachment: fixed; background-repeat: no-repeat;">
+
+
+    <!-- Animacija ucitavanja -->
+    <div class="loader loader-bg">
+        <div class="loader-inner ball-pulse">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <!-- Navigaciona traka -->
+    <nav class="navbar navbar-expand-md fixed-top top-nav">
+        <div class="container-fluid">
+            <img src="img/logo1.png" style="width: auto; height: 45px;">
+            <img src="img/logo2.png" style="width: auto; height: 44px; padding-left: 7px;">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"><img src="img/icons/menu.png"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav m-auto text-sm-center text-md-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Početna <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#about">O nama</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#testimonial">Izjave</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Usluge.html">Usluge</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Osoblje.html">Osoblje</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#contact">Kontakt</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="AdminRezervacije.html">Admin</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container text-center" style="margin-top: 110px;">
+        <div class="row">
+            <div class=".col">
+            </div>
+            <div class=".col" style="padding-left: 140px;">
+                <h2 style="color: #B47F41 !important; letter-spacing: 3px;">REZERVIŠITE SVOJ TERMIN</h2>
+            </div>
+            <div class=".col">
+            </div>
+        </div>
+    </div>
+
+    <div class="container" style="margin-top: 17px;">
+        <div class="row" style=" color: white; margin-left: 113px; background: rgba(135,120,116,0.8); padding: 30px 30px 0px; border-radius: 35px; width: 980px;">
+            <form action="https://formspree.io/f/mgeqozvk" method="POST" style="height: 620px;">
+                <div class="col">
+                    <label style="padding-right:100px;">Ime </label> <input type="text" id="ime" name="Ime" class="inputPolje" required><br /><br />
+                    <label style="padding-right:72px;">Prezime </label> <input type="text" id="prezime" name="Prezime" class="inputPolje" required><br /><br />
+                    <label style="padding-right:88px;">Email </label> <input type="email" id="email" name="Email" class="inputPolje"><br /><br />
+                    <label style="padding-right:39px;">Broj telefona </label> <input type="tel" id="telefon" name="Broj telefona" class="inputPolje"><br /><br />
+
+                    <label>Spol
+                        <select id="spol" name="spol" style="margin-left: 144px; width: 130px;" required>
+                            <option value="zensko">Žensko</option>
+                            <option value="musko">Muško</option>
+                        </select>
+                    </label><br /><br />
+                    
+                    <label style="padding-right:80px;">Željeni datum </label> <input type="date" id="datum" name="Željeni datum"><br /><br />
+                    <label style="padding-right:70px;">Željeno vrijeme </label> <input type="time" id="vrijeme" name="Željeno vrijeme" style="width: 130px;"><br /><br />
+                </div>
+                <div class="col" style="top: -471px; margin-left: 450px;">
+                    <label>Opća usluga
+                        <select id="usluga" style="margin-left: 67px;" name="Opća usluga">
+                            <option value="" disabled selected>(Odaberite uslugu)</option>
+                        </select>
+                    </label><br /><br />
+
+                    <label>Frizure
+                        <select id="frizure" style="margin-left: 104px;" name="Frizura">
+                            <option value="" disabled selected>(Odaberite frizuru)</option>
+                        </select>
+                    </label> <br /><br />
+
+                    <label>Dodatna usluga <br /> za muškarce
+                        <select id="muskaUsluga" style="margin-left: 67px;" name="Dodatna usluga za muškarce">
+                            <option value="" disabled selected>(Odaberite uslugu za muškarce)</option>
+                        </select>
+                    </label> <br /><br />
+
+                    <label>Manikura i pedikura
+                        <select id="manikura" style="margin-left: 18px;" name="Manikura i pedikura">
+                            <option value="" disabled selected>(Odaberite manikuru/pedikuru)</option>
+                        </select>
+                    </label><br /><br />
+
+                    <label>Frizer
+                        <select id="frizer" style="margin-left: 113px;" name="Frizer">
+                            <option value="" disabled selected>(Odaberite željenog frizera)</option>
+                        </select>
+                    </label><br /><br />
+
+                    <label>Maniker/Pediker
+                        <select id="maniker" style="margin-left: 18px; width: 300px;" name="Maniker/Pediker">
+                            <option value="" disabled selected>(Odaberite željenog manikera/pedikera)</option>
+                        </select>
+                    </label><br /><br />
+
+                    <label style="padding-right:38px;">Napomena/Poruka</label><textarea name="Napomena/Poruka"></textarea>
+                    <br />
+                    <button type="submit" class="btn btn-secondary" style="width: 100px; margin-left: 331px;">Pošalji</button><br /><br />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col">                
+            </div>
+            <div class="col-9" style="color: white; font-size: 18px; padding-top: 12px; ">
+                <i> <p>Potvrdni odgovor ćete primiti putem email-a ili broja telefona koji ste naveli u roku od 15-30 min.<br /> Željenu platformu komunikacije možete navesti u dijelu Napomena/Poruka!</p></i>
+            </div>
+            <div class="col">                
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Javascript Files  -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/core.js"></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+
+
+    <script>
+
+        var today = new Date();
+        var dd = String(today.getDate()).padStart(2, '0');
+        var mm = String(today.getMonth() + 1).padStart(2, '0');
+        var yyyy = today.getFullYear();
+
+        today = yyyy + '-' + mm + '-' + dd;
+        $('#datum').attr('min', today);
+
+        preuzmiFrizera = () => {
+            var url = "api/Rezervacije/getFrizeri";
+            fetch(url)
+                .then((rezultat) => {
+                    if (rezultat.status != 200) {
+                        porukaError("Greska  " + rezultat.status)
+                        return;
+                    }
+                    rezultat.json().then((frizeri) => {
+                        for (let frizer of frizeri) {
+                            let novi_red = `<option value="${frizer.ime + " " + frizer.prezime}">${frizer.ime + " " + frizer.prezime}</option>`;
+                            document.getElementById("frizer").innerHTML += novi_red;
+                        }
+                    });
+                })
+                .catch((error) => {
+                    porukaError("Greska  " + error)
+                });
+        }
+
+        preuzmiManikira = () => {
+            var url = "api/Rezervacije/getManikeri";
+            fetch(url)
+                .then((rezultat) => {
+                    if (rezultat.status != 200) {
+                        porukaError("Greska  " + rezultat.status)
+                        return;
+                    }
+                    rezultat.json().then((manikeri) => {
+                        for (let maniker of manikeri) {
+                            let novi_red = `<option value="${maniker.ime + " " + maniker.prezime}">${maniker.ime + " " + maniker.prezime}</option>`;
+                            document.getElementById("maniker").innerHTML += novi_red;
+                        }
+                    });
+                })
+                .catch((error) => {
+                    porukaError("Greska  " + error)
+                });
+        }
+
+        preuzmiManikuru = () => {
+            var url = "api/Rezervacije/getManikuru";
+            fetch(url)
+                .then((rezultat) => {
+                    if (rezultat.status != 200) {
+                        porukaError("Greska  " + rezultat.status)
+                        return;
+                    }
+                    rezultat.json().then((manikuraPedikura) => {
+                        for (let manikura of manikuraPedikura) {
+                            let novi_red = `<option value="${manikura.nazivUsluge}">${manikura.nazivUsluge}</option>`;
+                            document.getElementById("manikura").innerHTML += novi_red;
+                        }
+                    });
+                })
+                .catch((error) => {
+                    porukaError("Greska  " + error)
+                });
+        }
+
+        preuzmiMuskuUslugu = () => {
+            var url = "api/Rezervacije/getMuskuUslugu";
+            fetch(url)
+                .then((rezultat) => {
+                    if (rezultat.status != 200) {
+                        porukaError("Greska  " + rezultat.status)
+                        return;
+                    }
+                    rezultat.json().then((muskaUsluga) => {
+                        for (let brada of muskaUsluga) {
+                            let novi_red = `<option value="${brada.nazivUsluge}">${brada.nazivUsluge}</option>`;
+                            document.getElementById("muskaUsluga").innerHTML += novi_red;
+                        }
+                    });
+                })
+                .catch((error) => {
+                    porukaError("Greska  " + error)
+                });
+        }
+
+        preuzmiFrizuru = () => {
+            var url = "api/Rezervacije/getFrizure";
+            fetch(url)
+                .then((rezultat) => {
+                    if (rezultat.status != 200) {
+                        porukaError("Greska  " + rezultat.status)
+                        return;
+                    }
+                    rezultat.json().then((frizure) => {
+                        for (let frizura of frizure) {
+                            let novi_red = `<option value="${frizura.nazivUsluge}">${frizura.nazivUsluge}</option>`;
+                            document.getElementById("frizure").innerHTML += novi_red;
+                        }
+                    });
+                })
+                .catch((error) => {
+                    porukaError("Greska  " + error)
+                });
+        }
+
+        preuzmiUslugu = () => {
+            var url = "api/Rezervacije/getUslugu";
+            fetch(url)
+                .then((rezultat) => {
+                    if (rezultat.status != 200) {
+                        porukaError("Greska  " + rezultat.status)
+                        return;
+                    }
+                    rezultat.json().then((usluge) => {
+                        for (let usluga of usluge) {
+                            let novi_red = `<option value="${usluga.nazivUsluge}">${usluga.nazivUsluge}</option>`;
+                            document.getElementById("usluga").innerHTML += novi_red;
+                        }
+                    });
+                })
+                .catch((error) => {
+                    porukaError("Greska  " + error)
+                });
+        }
+
+        inicijalizacija = () => {
+            preuzmiFrizera();
+            preuzmiManikira();
+            preuzmiManikuru();
+            preuzmiMuskuUslugu();
+            preuzmiFrizuru();
+            preuzmiUslugu();
+        }
+
+        document.addEventListener("load", inicijalizacija());
+
+    </script>
+</body>
+</html>

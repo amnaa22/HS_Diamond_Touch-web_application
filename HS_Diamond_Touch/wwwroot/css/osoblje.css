@@ -1,0 +1,25 @@
+﻿
+#osobljeTekst {
+    text-align: -webkit-center;
+    margin-top: 118px;
+    color: black;
+    background: rgba(247,245,237,0.7);
+    width: 742px;
+    margin-left: 237px;
+    border-radius: 5px;
+    padding: 15px 38px 15px;
+}
+#frizeri {
+    color: white;
+    text-align: center;
+    margin-top: 32px;
+    letter-spacing: 21px;
+    margin-left: 97px;
+}
+#manikieri {
+    color: white;
+    text-align: center;
+    letter-spacing: 21px;
+    margin-left: 19px;
+    margin-top: 77px;
+}
